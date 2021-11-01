@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'LoginController@index');
 Route::post('/login', 'LoginController@login');
 
+
+
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/dashboard', 'DaftarController@index');
+    Route::get('/dashboard', 'Admin\DashboardController@dashboard');
 });
